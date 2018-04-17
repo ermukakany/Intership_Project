@@ -1,0 +1,1 @@
+include ':attrformular', ':app', ':base', ':instantapp'
