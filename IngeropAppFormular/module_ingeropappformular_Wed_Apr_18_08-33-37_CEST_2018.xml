@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_ingeropappformular" default="compile.module.ingeropappformular">
+  <dirname property="module.ingeropappformular.basedir" file="${ant.file.module_ingeropappformular}"/>
+  
+  <property name="module.jdk.home.ingeropappformular" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.ingeropappformular" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.ingeropappformular" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.ingeropappformular" value="-encoding UTF-8 -source 1.6 -target 1.6 ${compiler.args}"/>
+  
+  <property name="ingeropappformular.output.dir" value="${module.ingeropappformular.basedir}/build/classes/production/IngeropAppFormular"/>
+  <property name="ingeropappformular.testoutput.dir" value="${module.ingeropappformular.basedir}/build/classes/test/IngeropAppFormular"/>
+  
+  <path id="ingeropappformular.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="ingeropappformular.module.production.classpath">
+    <path refid="${module.jdk.classpath.ingeropappformular}"/>
+  </path>
+  
+  <path id="ingeropappformular.runtime.production.module.classpath">
+    <pathelement location="${ingeropappformular.output.dir}"/>
+  </path>
+  
+  <path id="ingeropappformular.module.classpath">
+    <path refid="${module.jdk.classpath.ingeropappformular}"/>
+    <pathelement location="${ingeropappformular.output.dir}"/>
+  </path>
+  
+  <path id="ingeropappformular.runtime.module.classpath">
+    <pathelement location="${ingeropappformular.testoutput.dir}"/>
+    <pathelement location="${ingeropappformular.output.dir}"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.ingeropappformular">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.ingeropappformular">
+    <patternset refid="excluded.from.module.ingeropappformular"/>
+  </patternset>
+  
+  
+  <target name="compile.module.ingeropappformular" depends="compile.module.ingeropappformular.production,compile.module.ingeropappformular.tests" description="Compile module IngeropAppFormular"/>
+  
+  <target name="compile.module.ingeropappformular.production" depends="register.custom.compilers" description="Compile module IngeropAppFormular; production classes"/>
+  
+  <target name="compile.module.ingeropappformular.tests" depends="register.custom.compilers,compile.module.ingeropappformular.production" description="compile module IngeropAppFormular; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.ingeropappformular" description="cleanup module">
+    <delete dir="${ingeropappformular.output.dir}"/>
+    <delete dir="${ingeropappformular.testoutput.dir}"/>
+  </target>
+</project>

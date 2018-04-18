@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_instantapp" default="compile.module.instantapp">
+  <dirname property="module.instantapp.basedir" file="${ant.file.module_instantapp}"/>
+  
+  <property name="module.jdk.home.instantapp" value="${jdk.home.android_api_26_platform}"/>
+  <property name="module.jdk.bin.instantapp" value="${jdk.bin.android_api_26_platform}"/>
+  <property name="module.jdk.classpath.instantapp" value="jdk.classpath.android_api_26_platform"/>
+  
+  <property name="compiler.args.instantapp" value="-encoding UTF-8 -source 1.6 -target 1.6 ${compiler.args}"/>
+  
+  <property name="instantapp.output.dir" value="${module.instantapp.basedir}/../../../../../ProgramData/Microsoft/Windows/Start Menu/Programs/Android Studio"/>
+  <property name="instantapp.testoutput.dir" value="${module.instantapp.basedir}/../../../../../ProgramData/Microsoft/Windows/Start Menu/Programs/Android Studio"/>
+  
+  <path id="instantapp.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="instantapp.module.production.classpath">
+    <path refid="${module.jdk.classpath.instantapp}"/>
+    <path refid="library.gradle:_android.arch.lifecycle:common:1.1.0@jar.classpath"/>
+    <path refid="library.gradle:_com.android.support:support-fragment-27.1.1.classpath"/>
+    <path refid="library.gradle:_com.android.support:support-annotations:27.1.1@jar.classpath"/>
+    <path refid="library.gradle:_com.android.support.constraint:constraint-layout-1.1.0.classpath"/>
+    <path refid="library.gradle:_com.android.support:animated-vector-drawable-27.1.1.classpath"/>
+    <path refid="library.gradle:_android.arch.core:runtime-1.1.0.classpath"/>
+    <path refid="library.gradle:_com.android.support:support-compat-27.1.1.classpath"/>
+    <path refid="library.gradle:_com.android.support:appcompat-v7-27.1.1.classpath"/>
+    <path refid="library.gradle:_android.arch.lifecycle:viewmodel-1.1.0.classpath"/>
+    <path refid="library.gradle:_com.android.support.constraint:constraint-layout-solver:1.1.0@jar.classpath"/>
+    <path refid="library.gradle:_android.arch.lifecycle:livedata-core-1.1.0.classpath"/>
+    <path refid="library.gradle:_com.android.support:support-vector-drawable-27.1.1.classpath"/>
+    <path refid="library.gradle:_com.android.support:support-core-ui-27.1.1.classpath"/>
+    <path refid="library.gradle:_android.arch.core:common:1.1.0@jar.classpath"/>
+    <path refid="library.gradle:_com.android.support:support-core-utils-27.1.1.classpath"/>
+    <path refid="library.gradle:_android.arch.lifecycle:runtime-1.1.0.classpath"/>
+  </path>
+  
+  <path id="instantapp.runtime.production.module.classpath">
+    <pathelement location="${instantapp.output.dir}"/>
+    <path refid="library.gradle:_android.arch.lifecycle:common:1.1.0@jar.classpath"/>
+    <path refid="library.gradle:_com.android.support:support-fragment-27.1.1.classpath"/>
+    <path refid="library.gradle:_com.android.support:support-annotations:27.1.1@jar.classpath"/>
+    <path refid="library.gradle:_com.android.support.constraint:constraint-layout-1.1.0.classpath"/>
+    <path refid="library.gradle:_com.android.support:animated-vector-drawable-27.1.1.classpath"/>
+    <path refid="library.gradle:_android.arch.core:runtime-1.1.0.classpath"/>
+    <path refid="library.gradle:_com.android.support:support-compat-27.1.1.classpath"/>
+    <path refid="library.gradle:_com.android.support:appcompat-v7-27.1.1.classpath"/>
+    <path refid="library.gradle:_android.arch.lifecycle:viewmodel-1.1.0.classpath"/>
+    <path refid="library.gradle:_com.android.support.constraint:constraint-layout-solver:1.1.0@jar.classpath"/>
+    <path refid="library.gradle:_android.arch.lifecycle:livedata-core-1.1.0.classpath"/>
+    <path refid="library.gradle:_com.android.support:support-vector-drawable-27.1.1.classpath"/>
+    <path refid="library.gradle:_com.android.support:support-core-ui-27.1.1.classpath"/>
+    <path refid="library.gradle:_android.arch.core:common:1.1.0@jar.classpath"/>
+    <path refid="library.gradle:_com.android.support:support-core-utils-27.1.1.classpath"/>
+    <path refid="library.gradle:_android.arch.lifecycle:runtime-1.1.0.classpath"/>
+  </path>
+  
+  <path id="instantapp.module.classpath">
+    <path refid="${module.jdk.classpath.instantapp}"/>
+    <pathelement location="${instantapp.output.dir}"/>
+    <path refid="library.gradle:_android.arch.lifecycle:common:1.1.0@jar.classpath"/>
+    <path refid="library.gradle:_com.android.support:support-fragment-27.1.1.classpath"/>
+    <path refid="library.gradle:_com.android.support:support-annotations:27.1.1@jar.classpath"/>
+    <path refid="library.gradle:_com.android.support.constraint:constraint-layout-1.1.0.classpath"/>
+    <path refid="library.gradle:_com.android.support:animated-vector-drawable-27.1.1.classpath"/>
+    <path refid="library.gradle:_android.arch.core:runtime-1.1.0.classpath"/>
+    <path refid="library.gradle:_com.android.support:support-compat-27.1.1.classpath"/>
+    <path refid="library.gradle:_com.android.support:appcompat-v7-27.1.1.classpath"/>
+    <path refid="library.gradle:_android.arch.lifecycle:viewmodel-1.1.0.classpath"/>
+    <path refid="library.gradle:_com.android.support.constraint:constraint-layout-solver:1.1.0@jar.classpath"/>
+    <path refid="library.gradle:_android.arch.lifecycle:livedata-core-1.1.0.classpath"/>
+    <path refid="library.gradle:_com.android.support:support-vector-drawable-27.1.1.classpath"/>
+    <path refid="library.gradle:_com.android.support:support-core-ui-27.1.1.classpath"/>
+    <path refid="library.gradle:_android.arch.core:common:1.1.0@jar.classpath"/>
+    <path refid="library.gradle:_com.android.support:support-core-utils-27.1.1.classpath"/>
+    <path refid="library.gradle:_android.arch.lifecycle:runtime-1.1.0.classpath"/>
+  </path>
+  
+  <path id="instantapp.runtime.module.classpath">
+    <pathelement location="${instantapp.output.dir}"/>
+    <path refid="library.gradle:_android.arch.lifecycle:common:1.1.0@jar.classpath"/>
+    <path refid="library.gradle:_com.android.support:support-fragment-27.1.1.classpath"/>
+    <path refid="library.gradle:_com.android.support:support-annotations:27.1.1@jar.classpath"/>
+    <path refid="library.gradle:_com.android.support.constraint:constraint-layout-1.1.0.classpath"/>
+    <path refid="library.gradle:_com.android.support:animated-vector-drawable-27.1.1.classpath"/>
+    <path refid="library.gradle:_android.arch.core:runtime-1.1.0.classpath"/>
+    <path refid="library.gradle:_com.android.support:support-compat-27.1.1.classpath"/>
+    <path refid="library.gradle:_com.android.support:appcompat-v7-27.1.1.classpath"/>
+    <path refid="library.gradle:_android.arch.lifecycle:viewmodel-1.1.0.classpath"/>
+    <path refid="library.gradle:_com.android.support.constraint:constraint-layout-solver:1.1.0@jar.classpath"/>
+    <path refid="library.gradle:_android.arch.lifecycle:livedata-core-1.1.0.classpath"/>
+    <path refid="library.gradle:_com.android.support:support-vector-drawable-27.1.1.classpath"/>
+    <path refid="library.gradle:_com.android.support:support-core-ui-27.1.1.classpath"/>
+    <path refid="library.gradle:_android.arch.core:common:1.1.0@jar.classpath"/>
+    <path refid="library.gradle:_com.android.support:support-core-utils-27.1.1.classpath"/>
+    <path refid="library.gradle:_android.arch.lifecycle:runtime-1.1.0.classpath"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.instantapp">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.instantapp">
+    <patternset refid="excluded.from.module.instantapp"/>
+  </patternset>
+  
+  
+  <target name="compile.module.instantapp" depends="compile.module.instantapp.production,compile.module.instantapp.tests" description="Compile module instantapp"/>
+  
+  <target name="compile.module.instantapp.production" depends="register.custom.compilers" description="Compile module instantapp; production classes"/>
+  
+  <target name="compile.module.instantapp.tests" depends="register.custom.compilers,compile.module.instantapp.production" description="compile module instantapp; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.instantapp" description="cleanup module">
+    <delete dir="${instantapp.output.dir}"/>
+    <delete dir="${instantapp.testoutput.dir}"/>
+  </target>
+</project>
