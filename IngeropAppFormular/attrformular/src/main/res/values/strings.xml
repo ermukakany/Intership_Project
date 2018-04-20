@@ -1,1 +1,13 @@
-<resources></resources>
+<resources>
+    <string name="Username">Username</string>
+    <string name="App">App</string>
+    <string name="Role">Role</string>
+    <string name="LoginRole">LoginRole</string>
+    <string name="method">method</string>
+    <string name="LoginStatus">LoginStatus</string>
+    <string name="Status">Status</string>
+    <string name="Choose">Choose</string>
+    <string name="LoginPost">LoginPost</string>
+    <string name="LoginGet">LoginGet</string>
+    <string name="Password">Password</string>
+</resources>
