@@ -7,16 +7,16 @@
         tools:context=".MainActivity">
 
     <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="372dp"
+        android:id="@+id/imgLogo"
+        android:layout_width="386dp"
         android:layout_height="121dp"
         app:srcCompat="@mipmap/ingerop"
-        tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="3dp"
-        tools:layout_editor_absoluteY="-1dp" />
+        tools:layout_editor_absoluteY="-1dp"
+        tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/editText4"
+        android:id="@+id/edUser"
         android:layout_width="375dp"
         android:layout_height="48dp"
         android:ems="10"
@@ -27,7 +27,7 @@
         tools:layout_editor_absoluteY="149dp" />
 
     <EditText
-        android:id="@+id/editText5"
+        android:id="@+id/edpwd"
         android:layout_width="367dp"
         android:layout_height="54dp"
         android:ems="10"
@@ -38,16 +38,16 @@
         tools:layout_editor_absoluteY="228dp" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/butsubmit"
         android:layout_width="233dp"
         android:layout_height="50dp"
-        android:text="Seconnecter"
+        android:text="Valider"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="76dp"
         tools:layout_editor_absoluteY="306dp" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/txtvpwdO"
         android:layout_width="229dp"
         android:layout_height="26dp"
         android:focusableInTouchMode="false"

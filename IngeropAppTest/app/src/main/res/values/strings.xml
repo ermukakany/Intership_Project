@@ -3,4 +3,8 @@
     <string name="join">Demander un compte</string>
     <string name="account_exists">Avez-vous déjà un compte ? </string>
     <string name="login"> Se connecter</string>
+    <string name="adduserConnecter" >AJOUTER UTILISATEUR</string>
+    <string name="makeModifuser" >MODIFIER</string>
+    <string name="listUsers">TOUS LES UTILISATEURS</string>
+    <string name="accueil">Accueil</string>
 </resources>

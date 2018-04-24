@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#056bb4">
+    android:background ="@color/colorgren">
 
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -64,7 +64,7 @@
         tools:layout_editor_absoluteY="204dp">
 
         <Button
-            android:id="@+id/files"
+            android:id="@+id/btnfiles"
             android:layout_width="240dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
@@ -75,7 +75,7 @@
             android:text="Mes fichiers" />
 
         <Button
-            android:id="@+id/createcpt"
+            android:id="@+id/btncpt"
             android:layout_width="276dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
@@ -100,7 +100,7 @@
 
 
             <Button
-                android:id="@+id/signin"
+                android:id="@+id/btnsignin"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@android:color/transparent"

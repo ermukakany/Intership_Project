@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background ="@color/colorgren">
+
+
+    <LinearLayout
+        android:id="@+id/choiceActiv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="top|center_vertical|center"
+        android:onClick="@string/ShowuserConnecter"
+        android:orientation="vertical"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="2dp"
+        tools:layout_editor_absoluteY="6dp">
+
+        <LinearLayout
+            android:id="@+id/ImgchoiceActiv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            tools:ignore="MissingConstraints">
+
+            <ImageView
+                android:id="@+id/logoUser"
+                android:layout_width="141dp"
+                android:layout_height="284dp"
+                android:layout_gravity="center"
+                android:gravity="top"
+                android:maxWidth="@dimen/detail_backdrop_height"
+                android:minHeight="241dp"
+                android:onClick="onImgUploUserClick"
+                android:src="@mipmap/ic_launcher" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnAdduser"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:onClick="onBtnAdduserClick"
+            android:text="AJOUTER UTILISATEUR" />
+
+        <Button
+            android:id="@+id/btnMod"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:onClick="onBtnModifieruserClick"
+            android:text="MODIFIER" />
+
+        <Button
+            android:id="@+id/btnAllusers"
+            android:layout_width="380dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:onClick="onBtnListeuserClick"
+            android:text="TOUS LES UTILISATEURS" />
+
+        <Button
+            android:id="@+id/btnSup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="SUPPRIMER" />
+    </LinearLayout>
+</android.support.constraint.ConstraintLayout>

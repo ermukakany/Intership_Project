@@ -1,73 +1,82 @@
 package com.example.emukakan.ingeropapptest;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.android.volley.Header;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.Volley;
+import com.loopj.android.http.AsyncHttpClient;
+import com.loopj.android.http.JsonHttpResponseHandler;
+import com.loopj.android.http.RequestHandle;
+import com.loopj.android.http.RequestParams;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
 
 public class AccActivityMain extends Activity {
 
-    private Button createcpt, files,signin;
-    private ImageView logoIng;
-    private TextView account_exists;
-   RequestQueue queue;
+    private EditText ed_User;
+    private EditText ed_pwd;
+    private Button but_Log;
+    private ImageView img_Logo;
+    private TextView txt_pwdO;
+    String u,p;
+    RequestParams params;
+    AsyncHttpClient client;
+    String myURL = "http://10.22.6.206:8080/AndroidLogin/Register";
 
-    String InsertQueries = "http://10.22.6.206/IngeropAndroidBdd/InsertQueries.php";
-    String SelectQueries  =  "http://10.22.6.206/IngeropAndroidBdd/SelectQueries.php";
+    //connecter phone with web en javaee
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate ( savedInstanceState );
-        setContentView(R.layout.acc_activity_main);
+        setContentView(R.layout.activity_main);
 
-        createcpt = findViewById ( R.id.createcpt );
-        files = findViewById ( R.id.files );
-        signin = findViewById ( R.id.signin );
-        account_exists = findViewById ( R.id.account_exists );
-        logoIng =  findViewById ( R.id.logoIng );
+        ed_User = findViewById ( R.id. edUser);
+        ed_pwd = findViewById ( R.id.edpwd );
+        but_Log = findViewById ( R.id.butsubmit );
+        img_Logo = findViewById ( R.id.imgLogo);
+        txt_pwdO=  findViewById ( R.id.txtvpwdO );
 
-        queue = Volley.newRequestQueue(this);
+        but_Log.setOnClickListener (new View.OnClickListener (){
 
-        /*signin.setOnClickListener(new View.OnClickListener (){
             @Override
             public void onClick(View v) {
-                JsonObjectRequest jsonreq = new JsonObjectRequest ( Request.Method.POST, SelectQueries, new Response.Listener<JSONObject>(){
+                u = ed_User.getText ().toString ();
+                p = ed_pwd.getText ().toString ();
+                params= new RequestParams ();
+                params.put("k1",u);
+                params.put("k2",p);
+
+                client = new AsyncHttpClient ();
+                client.post ( "myURL", params, new JsonHttpResponseHandler () {
 
                     @Override
-                    public void onResponse(JSONObject response) {
-                            try {
-                                JSONArray users = response.getJSONArray ( "utilisateur" );
-                                for (int i = 0; i< users.length(); i++){
-
-                                    JSONObject user = users.getJSONObject(i);
-
-                                    String lastname = user.getString ("nom");
-                                    String firstname = user.getString ("prenom");
-                                    String pseudo = user.getString ("pseudo");
-                                    String email = user.getString ("email");
-                                    String mdp = user.getString ("mdp");
-                                    String fonction = user.getString ("fonction");
-
-                                    account_exists.append ( lastname+" "+firstname+" "+pseudo+" "+email+" "+mdp+" "+fonction+"\n" );
-                                }
-                                account_exists.append ("===\n" );
-                            } catch (JSONException e) {
-                                e.printStackTrace ();
-                            }
-
-                     }
-                },new Response.ErrorListener (){
-
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-
+                    public void onSuccess(int statusCode, cz.msebera.android.httpclient.Header[] headers, JSONObject response) {
+                        super.onSuccess ( statusCode, headers, response );
+                            Toast.makeText ( AccActivityMain.this,"Info validé"+response, Toast.LENGTH_SHORT ).show ();
                     }
-                });
+
+                    @Override
+                    public void onFailure(int statusCode, cz.msebera.android.httpclient.Header[] headers, Throwable throwable, JSONObject errorResponse) {
+                        super.onFailure ( statusCode, headers, throwable, errorResponse );
+
+                        Toast.makeText ( AccActivityMain.this,"Utilisateur ou mot de passe erroné !", Toast.LENGTH_SHORT ).show ();
+                    }
+                } );
+
             }
-        });*/
+        });
+
+       //connecter à la base de données mysql avec javaee
+
     }
 }

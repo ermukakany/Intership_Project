@@ -20,6 +20,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".AccActivityMain"
+            android:label="@string/Accueil"
+            android:noHistory="true"
+            android:theme="@style/AppTheme" />
     </application>
 
 </manifest>

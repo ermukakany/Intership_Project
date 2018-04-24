@@ -3,4 +3,6 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="colorgren">#2a4b71</color>
+    <color name="bckgrImgUser">#3b63a4</color>
 </resources>
